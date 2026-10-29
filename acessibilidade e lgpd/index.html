@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LGPD e Acessibilidade Web: Guia Prático de Engenharia de Software</title>
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Ícones Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. NAVEGAÇÃO SUPERIOR (HEADER FIXO)
+       ========================================================================== -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <i data-lucide="shield-check"></i>
+      <span>WebEtica & Dev</span>
+    </div>
+
+    <div class="nav-controls">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar no artigo..." aria-label="Buscar no artigo">
+      </div>
+      <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Alternar tema claro/escuro">
+        <i data-lucide="moon" id="themeIcon"></i>
+      </button>
+    </div>
+
+    <!-- Barra de progresso de leitura -->
+    <div class="reading-progress-bar" id="progressBar"></div>
+  </header>
+
+  <!-- ==========================================================================
+       2. MENU LATERAL ESQUERDO (SIDEBAR FIXA)
+       ========================================================================== -->
+  <aside class="sidebar" id="sidebar">
+    <!-- Card de Tempo de Leitura -->
+    <div class="time-card">
+      <div class="time-card-title">
+        <i data-lucide="clock"></i>
+        <span>Tempo de Leitura: ~15 min</span>
+      </div>
+      <p class="time-card-desc">
+        Conteúdo aprofundado com WCAG 2.2, LBI, Privacy by Design e Engenharia de Software.
+      </p>
+    </div>
+
+    <div class="menu-title">Tópicos do Artigo</div>
+
+    <nav>
+      <ul class="nav-links">
+        <li class="nav-item active" data-section="sec-1">
+          <a href="#sec-1"><i data-lucide="book-open"></i> 1. Introdução & Contexto Legal</a>
+        </li>
+        <li class="nav-item" data-section="sec-2">
+          <a href="#sec-2"><i data-lucide="shield"></i> 2. LGPD na Eng. de Software</a>
+        </li>
+        <li class="nav-item" data-section="sec-3">
+          <a href="#sec-3"><i data-lucide="eye"></i> 3. WCAG 2.2 & eMAG</a>
+        </li>
+        <li class="nav-item" data-section="sec-4">
+          <a href="#sec-4"><i data-lucide="git-merge"></i> 4. O Ponto de Intersecção</a>
+        </li>
+        <li class="nav-item" data-section="sec-5">
+          <a href="#sec-5"><i data-lucide="code-2"></i> 5. Código Prático & Cases</a>
+        </li>
+        <li class="nav-item" data-section="sec-6">
+          <a href="#sec-6"><i data-lucide="check-square"></i> 6. Auditoria Interativa</a>
+        </li>
+        <li class="nav-item" data-section="sec-7">
+          <a href="#sec-7"><i data-lucide="bookmark"></i> 7. Referências Acadêmicas</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- ==========================================================================
+       3. CONTEÚDO PRINCIPAL (ARTIGO)
+       ========================================================================== -->
+  <main class="main-wrapper">
+    
+    <header class="article-header">
+      <h1 class="article-title">Construindo a Web Inclusiva e Segura: A Convergência entre LGPD e Acessibilidade Web</h1>
+      <p class="article-subtitle">
+        Uma análise técnica para acadêmicos e desenvolvedores de Ciência da Computação sobre a integração de privacidade de dados e acessibilidade digital no ciclo de vida do software.
+      </p>
+    </header>
+
+    <!-- SEÇÃO 1 -->
+    <section id="sec-1" class="article-section">
+      <h2>1. Introdução & Contexto Legal</h2>
+      <p>
+        O desenvolvimento web moderno exige que engenheiros de software considerem requisitos que vão muito além da funcionalidade básica e do desempenho. A interseção entre a privacidade de dados e a acessibilidade digital tornou-se um pilar crítico no ecossistema de tecnologia.
+      </p>
+      <p>
+        No Brasil, essa consonância é pautada por marcos regulatórios rígidos: a <strong>Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018)</strong> e a <strong>Lei Brasileira de Inclusão (LBI - Lei nº 13.146/2015)</strong>, em conjunto com o Marco Civil da Internet (Lei nº 12.965/2014).
+      </p>
+    </section>
+
+    <!-- SEÇÃO 2 -->
+    <section id="sec-2" class="article-section">
+      <h2>2. LGPD na Engenharia de Software</h2>
+      <p>
+        A LGPD estabelece regras claras para a coleta, tratamento, armazenamento e compartilhamento de dados pessoais. Para o desenvolvedor, a conformidade não se limita a termos legais, mas sim a decisões de arquitetura de software.
+      </p>
+      <p>
+        A metodologia de <strong>Privacy by Design</strong> (Ann Cavoukian) determina que a privacidade deve ser incorporada desde a concepção do projeto, aplicando os seguintes princípios essenciais:
+      </p>
+      <ul>
+        <li><strong>Proativo, não reativo:</strong> Antecipar eventos de violação antes que ocorram.</li>
+        <li><strong>Privacidade por Padrão (Privacy by Default):</strong> As configurações padrão devem garantir máxima proteção sem exigir ações do usuário.</li>
+        <li><strong>Minimização de Dados:</strong> Coletar apenas os dados estritamente necessários para a finalidade declarada.</li>
+      </ul>
+    </section>
+
+    <!-- SEÇÃO 3 -->
+    <section id="sec-3" class="article-section">
+      <h2>3. WCAG 2.2 & eMAG</h2>
+      <p>
+        A acessibilidade na web garante que pessoas com deficiência (visual, auditiva, motora ou cognitiva) possam navegar, compreender e interagir com sistemas digitais. A principal referência global são as diretrizes da <strong>WCAG (Web Content Accessibility Guidelines)</strong> em seu nível 2.2 AA, complementadas pelo modelo governamental brasileiro <strong>eMAG</strong>.
+      </p>
+      <p>A WCAG apoia-se em 4 princípios fundamentais (POUR):</p>
+      <ul>
+        <li><strong>Perceptível:</strong> A informação deve ser apresentada em formatos que possam ser percebidos por qualquer leitor (ex: atributo <code>alt</code> em imagens).</li>
+        <li><strong>Operável:</strong> A interface precisa ser navegável por teclado e sem armadilhas de foco.</li>
+        <li><strong>Compreensível:</strong> Linguagem clara, formulários com validações explícitas e comportamento previsível.</li>
+        <li><strong>Robusto:</strong> O código HTML deve ser semântico para garantir compatibilidade com tecnologias assistivas (leitores de tela).</li>
+      </ul>
+    </section>
+
+    <!-- SEÇÃO 4 -->
+    <section id="sec-4" class="article-section">
+      <h2>4. O Ponto de Intersecção: Consentimento Acessível</h2>
+      <p>
+        Um dos maiores gargalos nos sistemas web atuais ocorre quando a conformidade com a LGPD ignora a Acessibilidade. Banners de aceite de cookies, modais de privacidade e termos de uso muitas vezes criam **barreiras insuperáveis** para usuários que utilizam navegadores de teclado ou leitores de tela (como NVDA e TalkBack).
+      </p>
+      <p>
+        Se um banner de cookies não puder ser operado via teclado ou seus botões não possuírem marcação semântica adequada, o usuário é incapaz de exercer seu direito legal de consentir ou recusar o tratamento de seus dados.
+      </p>
+    </section>
+
+    <!-- SEÇÃO 5 -->
+    <section id="sec-5" class="article-section">
+      <h2>5. Código Prático & Comparativo de Cases</h2>
+      <p>Abaixo, analise a diferença entre uma implementação inadequada e uma solução em conformidade com a LGPD e Acessível:</p>
+
+      <!-- VISUALIZADOR DE CÓDIGO INTERATIVO -->
+      <div class="code-playground">
+        <div class="playground-header">
+          <button class="tab-btn active" id="tabInaccessible" onclick="switchTab('inaccessible')">Inacessível / Inseguro</button>
+          <button class="tab-btn" id="tabAccessible" onclick="switchTab('accessible')">Acessível + LGPD</button>
+        </div>
+        <div class="playground-content">
+          <!-- Código Inacessível -->
+          <div id="codeInaccessible">
+<pre><code>&lt;!-- RUIM: Sem semântica, sem suporte a teclado e sem opções de aceite da LGPD --&gt;
+&lt;div class="cookie-banner"&gt;
+  &lt;p&gt;Nós usamos cookies. Clique para aceitar.&lt;/p&gt;
+  &lt;div class="btn" onclick="acceptAll()"&gt;OK&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+
+          <!-- Código Acessível -->
+          <div id="codeAccessible" style="display: none;">
+<pre><code>&lt;!-- BOM: Semântica acessível, navegação por teclado e granularidade da LGPD --&gt;
+&lt;section class="cookie-banner" aria-labelledby="cookie-title" role="dialog" aria-modal="true"&gt;
+  &lt;h2 id="cookie-title"&gt;Gerenciamento de Privacidade e Cookies&lt;/h2&gt;
+  &lt;p&gt;Utilizamos cookies estritamente necessários e analíticos mediante seu consentimento. Veja nossa &lt;a href="/privacidade"&gt;Política de Privacidade&lt;/a&gt;.&lt;/p&gt;
+  &lt;div class="button-group"&gt;
+    &lt;button type="button" id="btnReject" class="btn"&gt;Rejeitar Não Essenciais&lt;/button&gt;
+    &lt;button type="button" id="btnAccept" class="btn btn-primary"&gt;Aceitar Todos&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 6 -->
+    <section id="sec-6" class="article-section">
+      <h2>6. Auditoria e Checklist Interativo</h2>
+      <p>Use o checklist abaixo para avaliar se o seu projeto atende aos critérios fundamentais de ambos os conceitos:</p>
+      
+      <div style="background-color: var(--bg-surface); padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px;">
+        <label style="display: block; margin-bottom: 0.75rem;">
+          <input type="checkbox" class="audit-check"> Formulários possuem marcação <code>&lt;label&gt;</code> associada a cada campo.
+        </label>
+        <label style="display: block; margin-bottom: 0.75rem;">
+          <input type="checkbox" class="audit-check"> O banner de cookies pode ser operado usando a tecla Tab e Enter/Espaço.
+        </label>
+        <label style="display: block; margin-bottom: 0.75rem;">
+          <input type="checkbox" class="audit-check"> Há a opção clara para o usuário rejeitar cookies não essenciais.
+        </label>
+        <label style="display: block; margin-bottom: 0.75rem;">
+          <input type="checkbox" class="audit-check"> O contraste de cor do texto atende ao nível mínimo de 4.5:1 da WCAG.
+        </label>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 7 -->
+    <section id="sec-7" class="article-section">
+      <h2>7. Referências Acadêmicas</h2>
+      <ul style="padding-left: 1.5rem; color: var(--text-secondary);">
+        <li>BRASIL. <strong>Lei nº 13.709, de 14 de agosto de 2018</strong>. Lei Geral de Proteção de Dados Pessoais (LGPD). Brasília, DF, 2018.</li>
+        <li>BRASIL. <strong>Lei nº 13.146, de 6 de julho de 2015</strong>. Lei Brasileira de Inclusão da Pessoa com Deficiência. Brasília, DF, 2015.</li>
+        <li>W3C. <strong>Web Content Accessibility Guidelines (WCAG) 2.2</strong>. W3C Recommendation, 2023. Disponível em: &lt;https://www.w3.org/TR/WCAG22/&gt;.</li>
+        <li>CAVOUKIAN, Ann. <strong>Privacy by Design: The 7 Foundational Principles</strong>. Information and Privacy Commissioner of Ontario, 2009.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       4. RODAPÉ FIXO (NAVEGAÇÃO RÁPIDA)
+       ========================================================================== -->
+  <footer class="footer-nav">
+    <button class="footer-btn" id="prevBtn">
+      <i data-lucide="chevron-left"></i> Anterior
+    </button>
+    <span id="currentSectionName" style="font-size: 0.9rem; font-weight: 500; color: var(--text-secondary);">
+      1. Introdução & Contexto Legal
+    </span>
+    <button class="footer-btn" id="nextBtn">
+      Próximo <i data-lucide="chevron-right"></i>
+    </button>
+  </footer>
+
+  <!-- Scripts JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
